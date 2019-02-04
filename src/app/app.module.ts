@@ -10,6 +10,10 @@ import { ProtegidoComponent } from './components/protegido/protegido.component';
 
 import { app_routes } from './app.routes';
 
+// Services
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +24,12 @@ import { app_routes } from './app.routes';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(app_routes, { useHash: true})
+    RouterModule.forRoot(app_routes, { useHash: true })
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
